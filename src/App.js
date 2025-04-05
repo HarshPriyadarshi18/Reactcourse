@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import { ProductCard } from './components/ProductCard';
+import { ProductList } from './components/ProductList';  
 import './App.css';
+const product = {
+  name: "iPhone Pro max 15",
+  price: 999,
+  image: "/images/iphone.jpeg",
+  specifications: [
+    "6.7 inch display",
+    "48 MP camera",
+    "5G support",
+    "A17 chip",
+    "1TB storage",
+    "8GB RAM",
+    "5000 mAh battery"
+  ]
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <ProductList>
+     <ProductCard product={product}/>
+     <ProductCard product={product}/>
+     <ProductCard product={product}/>
+     </ProductList>
     </div>
   );
 }
 
 export default App;
+
