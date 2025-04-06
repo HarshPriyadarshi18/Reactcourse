@@ -1,3 +1,12 @@
+## 📅 Daily Update - 2025-04-05
+
+- Refactored `App.js` to dynamically render multiple products.
+- Enhanced `ProductCard` to support background color and user interaction.
+- Added click functionality to show product info via alert.
+- Introduced component-based structure: `ProductList` and `ProductCard`.
+
+
+
 # Reactcourse
 
 This is a React learning project where I'm building UI components.
