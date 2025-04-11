@@ -1,17 +1,21 @@
-export function ProductList(props) {
+export function ProductList({ children }) {
   return (
+    <>
+    <h2>products</h2>
     <div
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-between', // push items from start to end
-        gap: '16px',
+        justifyContent: 'center',
+        gap: '20px',
         padding: '20px',
         width: '100%',
         boxSizing: 'border-box',
       }}
     >
-      {props.children}
+     
+      {children}
     </div>
+    </>
   );
 }
