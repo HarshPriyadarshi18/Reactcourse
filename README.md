@@ -1,3 +1,12 @@
+## 📆 Daily Update - 2025-04-11
+
+- Refactored `App.js` to filter and display products under $1000.
+- Improved `ProductCard` with `stockCount` and visual stock status (`In Stock` / `Out of Stock`).
+- Added conditional rendering for Buy button based on stock availability.
+- Used `Fragment` and `map()` to render filtered product info cleanly.
+- Enhanced styling with borders, spacing, and rounded corners for better UI.
+
+
 ## 📅 Daily Update - 2025-04-05
 
 - Refactored `App.js` to dynamically render multiple products.
