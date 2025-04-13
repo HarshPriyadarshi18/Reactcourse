@@ -1,9 +1,9 @@
-📆 Daily Update - 2025-04-13
-Added useState for dynamic stockCount in ProductCard.
-Implemented "Show More / Show Less" toggle for specs.
-Enhanced UI with CSS classes for layout, button, and stock status.
-Buy button now hides when out of stock.
-Stock status shows live count or "Out of Stock".
+##📆 Daily Update - 2025-04-13
+-Added useState for dynamic stockCount in ProductCard.
+-Implemented "Show More / Show Less" toggle for specs.
+-Enhanced UI with CSS classes for layout, button, and stock status.
+-Buy button now hides when out of stock.
+-Stock status shows live count or "Out of Stock".
 
 ## 📆 Daily Update - 2025-04-11
 
