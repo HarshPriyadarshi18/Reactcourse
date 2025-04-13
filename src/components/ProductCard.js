@@ -1,9 +1,16 @@
 import './productCard.css';
-
+import { useState } from 'react';
 export function ProductCard({ product, background = "slategray" }) {
-  function handleClick(product) {
+  const[stockCount, setStockCount] = useState(product.stockCount);
+  //let stockCount = product.stockCount;
+   const[showMore, setShowMore] = useState(false);  
+
+  const handleClick = (product) => {
+    setStockCount(stockCount - 1);
+    //stockCount--;
+    console.log('stockCount', stockCount);
     alert(`You clicked on ${product.name} whose cost is $${product.price}`);
-  }
+  };
 
   return (
     <article className="Container" style={{ backgroundColor: background }}>
@@ -15,14 +22,18 @@ export function ProductCard({ product, background = "slategray" }) {
         height="180"
         style={{ borderRadius: "6px" }}
       />
-      <p>Specifications:</p>
-      <ul className="list">
+      <p>Specifications:{' '}
+        <button onClick={() => setShowMore(!showMore)} className="button">
+          {showMore ? "Show Less" : "Show More"}
+        </button>
+      </p>
+     {showMore&&<ul className="list">
         {product.specifications.map((spec, index) => (
           <li key={index}>{spec}</li>
         ))}
-      </ul>
-      <Status stockCount={product.stockCount} />
-      {product.stockCount > 0 && (
+      </ul>} 
+      <Status stockCount={stockCount} />
+      {stockCount > 0 && (
         <button
           onClick={() => handleClick(product)}
           className="button"
@@ -38,12 +49,9 @@ export function ProductCard({ product, background = "slategray" }) {
 function Status({ stockCount }) {
   return (
     <div>
-      {stockCount > 0 ? (
-        <span className="availaiblestatus">In Stock</span>
-      ) : (
-        <span className="notavailablestatus">Out of Stock</span>
-      )}
+      <span className={stockCount > 0 ? "availablestatus" : "notavailablestatus"}>
+        {stockCount > 0 ? `${stockCount} items available` : "Out of Stock"}
+      </span>
     </div>
   );
 }
-
